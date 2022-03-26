@@ -23,6 +23,10 @@ const deafaultVeiw = [
     content: 'Login',
     path: '/login',
   },
+  {
+    content: 'Transection',
+    path: '/warehouse/id/transection',
+  },
 ];
 
 export default function Sidebar() {
@@ -45,6 +49,8 @@ export default function Sidebar() {
               })}
             </ul>
           </div>
+
+          {/* in Bottom i should add user name + Role */}
         </div>
       </div>
     </>

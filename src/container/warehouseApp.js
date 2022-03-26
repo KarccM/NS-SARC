@@ -12,8 +12,8 @@ import AuthRoute from '../components/Routes/AuthRoute';
 import Sidebar from '../components/Sidebar';
 import NavFactory from '../components/Nav_Bars/SideBarFactory';
 import useLocalStorage from '../hooks/useLocalStorage';
-
-const links = ['register', 'users', 'balance', 'login'];
+import { Transection } from '../components/transection';
+import Add from '../components/warehouse Items/Add';
 
 const guestRoutes = [
   {
@@ -28,9 +28,19 @@ const guestRoutes = [
     path: '/',
     comp: <Home />,
   },
-];
 
-const authRoutes = [
+  {
+    path: '/warehouse/id/transection',
+    comp: <Transection />,
+  },
+  {
+    path: '/warehouse',
+    comp: <Balance />,
+  },
+  {
+    path: '/add',
+    comp: <Add />,
+  },
   {
     path: '/users',
     comp: <Users />,
@@ -39,14 +49,11 @@ const authRoutes = [
     path: '/profile/:id',
     comp: <Profile />,
   },
-  {
-    path: '/warehouse',
-    comp: <Balance />,
-  },
 ];
 
+const authRoutes = [];
+
 const WarehouseApp = () => {
-  const [k, setK] = useLocalStorage('loggedIn', 'True');
   return (
     <div>
       <Router>

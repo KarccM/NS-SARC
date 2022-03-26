@@ -1,5 +1,3 @@
-import useTranslation from '../hooks/useTranslate';
-
 export const genderOptions = ['male', 'female'];
 export const martialOptions = ['single', 'married'];
 export const shouldersOptions = ['s', 'm', 'l', 'xl', 'xxl', 'xxxl'];

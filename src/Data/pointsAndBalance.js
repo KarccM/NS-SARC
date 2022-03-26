@@ -1,42 +1,56 @@
 export const data = [
-    {
-        parent: 'Jarmana',
-        name: 'Harsta',
-        code: 'HR',
-        balance: {
-            food: 1200,
-            hygiene: 900,
-            coats: 230,
-        },
+  {
+    parent: 'ريف دمشق',
+    name: 'حرستا',
+    code: 'HR',
+    balance: {
+      غذائية: 1200,
+      صحية: 900,
+      جاكيت: 230,
+      مطبخ: 1200,
+      غالون: 900,
+      حصيرة: 230,
+      فرشات: 1200,
+      بطانيات: 900,
+      غذائية: 1200,
+      صحية: 900,
+      جاكيت: 230,
+      مطبخ: 1200,
+      غالون: 900,
+      حصيرة: 230,
+      فرشات: 1200,
+      بطانيات: 900,
+      غذائية: 1200,
     },
-    {
-        parent: 'Harsta',
-        name: 'Zamalka',
-        code: 'ZM',
-        balance: {
-            food: 800,
-            hygiene: 100,
-            coats: 20,
-        },
+  },
+  {
+    parent: 'حرستا',
+    name: 'زملكا',
+    code: 'ZM',
+    balance: {
+      غذائية: 800,
+      صحية: 100,
+      جاكيت: 20,
     },
-    {
-        parent: 'Harsta',
-        name: 'msraba',
-        code: 'MS',
-        balance: {
-            food: 0,
-            hygiene: 0,
-            coats: 0,
-        },
+  },
+  {
+    parent: 'حرستا',
+    name: 'مسرابا',
+    code: 'MS',
+    balance: {
+      غذائية: 100,
+      صحية: 0,
+      جاكيت: 0,
     },
-    {
-        parent: 'Harsta',
-        name: 'Madera',
-        code: 'MD',
-        balance: {
-            food: 0,
-            hygiene: 330,
-            coats: 0,
-        },
+  },
+  {
+    parent: 'حرستا',
+    name: 'مديرا',
+    code: 'MD',
+    balance: {
+      غذائية: 25,
+      صحية: 330,
+      جاكيت: 0,
     },
+  },
 ];

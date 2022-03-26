@@ -1,36 +1,53 @@
-import React, { useState } from 'react';
-import NavBarFactory from './Nav_Bars/NavBarFactory';
-import Header from './warehouse Items/Header';
+import React, { useState, useEffect } from 'react';
 import List from './warehouse Items/List';
 
-export const Warehouse = () => {
-  const [show, setShow] = useState(false);
+const btnStyle =
+  'bg-gray-900 text-white hover:opacity-90 transition duration-300 ease-out px-4 opacity-20';
+// i Should Make Loading in Table
+export const Warehouse = ({ fullData }) => {
+  const [index, setIndex] = useState(0);
+  const [currentData, setCurrentData] = useState(fullData[index]);
+  useEffect(() => {
+    setCurrentData(fullData[index]);
+  }, [index]);
+  const increaseValue = () => {
+    setIndex((prev) => {
+      return prev + 1;
+    });
+  };
+  const decreaseValue = () => {
+    setIndex((prev) => {
+      return prev - 1;
+    });
+  };
   return (
     //Condition For Authorization
-    <div className={'text-center text-xl bg-gray-100 text-black'}>
-      <NavBarFactory userRole={'warehouseManger'} />
-      <Header
-        point={'DOUMA'}
-        coordinator={'Kareem-Domani'}
-        materials={['1', '2', '3', '4', '5']}
-      />
-      <p>balance</p>
-      <p>sub-warehouses</p>
-      <List materials={['DM1', 'DM2', 'DM3']} />
-      <p>table of trans</p>
-      <List materials={['TR1', 'TR2']} />
-      {show === true ? (
-        <div className={'absolute h-60 w-1/2 bg-gray-800'}></div>
-      ) : (
-        <></>
-      )}
+    <container className="flex flex-row justify-center">
       <button
+        className={btnStyle}
         onClick={(e) => {
-          setShow(!show);
+          console.log(index);
+          if (index - 1 >= 0) decreaseValue();
         }}
       >
-        Click Me
+        {'<'}
       </button>
-    </div>
+      <div className={'text-center bg-gray-100 text-black px-12 text-xl'}>
+        <p className="text-2xl pb-12">
+          مستودع<span className="text-red-500"> {currentData.name} </span>{' '}
+          التابع ل <span className="text-red-500">{currentData.parent}</span>
+        </p>
+        <List materials={currentData.balance} />
+      </div>
+      <button
+        className={btnStyle}
+        onClick={(e) => {
+          console.log(index);
+          if (index + 1 < Object.keys(fullData).length) increaseValue();
+        }}
+      >
+        {'>'}
+      </button>
+    </container>
   );
 };

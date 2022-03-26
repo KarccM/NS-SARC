@@ -1,1 +1,0 @@
-import * as arabic from './arabic.json';

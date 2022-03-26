@@ -1,20 +1,6 @@
-import Stoke from './Stoke'
-
-const Header = ({point, coordinator, materials}) => {
-    const welcomeStatement = " اهلاً ";
-    return<>
-        <p className={"text-3xl text-center py-6"}>{coordinator} {welcomeStatement}</p>
-        <p className={"text-2xl text-center"}>{point}</p>
-        <p className={"text-2xl text-center"}>الرصيد الحالي</p>
-        <listcomp className={"flex"}>
-            {
-                materials.map((material)=>{
-                    return <>
-                        <Stoke material={material}/>
-                    </>
-                })
-            }
-        </listcomp>
-    </>
-}
+const headerStyle =
+  'text-4xl  text-center text-white font-sans bg-gray-900 py-6';
+const Header = ({ title }) => {
+  return <h1 className={headerStyle}>{title}</h1>;
+};
 export default Header;
